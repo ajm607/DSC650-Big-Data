@@ -62,7 +62,7 @@ str(test_results.rootMeanSquaredError)),
 def write_to_hbase_partition(partition):
     connection = happybase.Connection('master')
     connection.open()
-    table = connection.table('hrdata') # Update table name
+    table = connection.table('hr_data') # Update table name
     for row in partition:
         row_key, column, value = row
         table.put(row_key, {column: value})
